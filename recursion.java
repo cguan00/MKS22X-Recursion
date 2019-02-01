@@ -11,18 +11,18 @@ public class recursion{
     */
     public static double sqrt(double n, double tolerance){
       if(n == 0){
-        return 0;
+        return 0;//base case
       }
-      return sqrooty(n, 1, tolerance);
+      return sqrooty(n, 1, tolerance);//call helper method
     }
 
     public static double sqrooty(double n, double guess, double tolerance){
-      double pError = (Math.abs(((guess * guess) - n)) / n) * 100;
-      if(pError > tolerance){
-        double newGuess = ( n / guess + guess) / 2;
-        return sqrooty(n, newGuess, tolerance);
+      double pError = (Math.abs(((guess * guess) - n)) / n) * 100;//calculate percent error
+      if(pError > tolerance){//compare percent error to tolerance
+        double newGuess = ( n / guess + guess) / 2;//formula for new guess
+        return sqrooty(n, newGuess, tolerance);//recursive step
       } else{
-        return guess;
+        return guess;//base case
       }
     }
 
@@ -32,9 +32,9 @@ public class recursion{
      */
     public static int fib(int n){
       if(n <= 1){
-        return 1;
+        return 1;//base case
       } else{
-        return fib(n - 1) + fib(n - 2);
+        return fib(n - 1) + fib(n - 2);//recursive step: next number is found by adding up the two numbers before it
       }
     }
 
