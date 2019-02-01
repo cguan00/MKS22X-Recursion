@@ -31,7 +31,11 @@ public class recursion{
      *precondition: n is non-negative
      */
     public static int fib(int n){
-      return 0;
+      if(n <= 1){
+        return 1;
+      } else{
+        return fib(n - 1) + fib(n - 2);
+      }
     }
 
     /*As Per classwork*/
@@ -41,10 +45,21 @@ public class recursion{
     }
 
     public static void main(String[] args) {
+      System.out.println("SQUARE ROOT TESTING");
       System.out.println(sqrt(100, 0.001));
       System.out.println(sqrt(100, 10));
       System.out.println(sqrt(2, 0.001));
       System.out.println(sqrt(0, 0.001));
+
+      System.out.println("");
+
+      System.out.println("FIBONNACI TESTING");
+      System.out.println(fib(0));//should be 0
+      System.out.println(fib(1));//should be 1
+      System.out.println(fib(2));//should be 1
+      System.out.println(fib(3));//should be 2
+      System.out.println(fib(4));//should be 3
+      System.out.println(fib(5));//should be 5s
     }
 
 }
