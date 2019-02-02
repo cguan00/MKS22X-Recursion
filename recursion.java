@@ -31,11 +31,17 @@ public class recursion{
      *precondition: n is non-negative
      */
     public static int fib(int n){
-      if(n <= 1){
-        return 1;//base case
-      } else{
-        return fib(n - 1) + fib(n - 2);//recursive step: next number is found by adding up the two numbers before it
+      return fibHelper(n, 0, 1);
+    }
+
+    public static int fibHelper(int n, int firstNum, int secondNum){
+      if(n == 0){
+        return firstNum;
       }
+      if(n == 1){
+        return secondNum;
+      }
+      return fibHelper(n - 1, secondNum, firstNum + secondNum);
     }
 
     /*As Per classwork*/
@@ -59,7 +65,7 @@ public class recursion{
       System.out.println(fib(2));//should be 1
       System.out.println(fib(3));//should be 2
       System.out.println(fib(4));//should be 3
-      System.out.println(fib(5));//should be 5s
+      System.out.println(fib(5));//should be 5
     }
 
 }
