@@ -46,17 +46,17 @@ public class recursion{
 
     /*As Per classwork*/
     public static ArrayList<Integer> makeAllSums(int n){
-      ArrayList<Integer> sums = new ArrayList<Integer>();
-      makeAllSumsHelper(n, 0, sums);
+      ArrayList<Integer> sums = new ArrayList<Integer>();//create arraylist that will store all the sums
+      makeAllSumsHelper(n, 0, sums);//call helper method
       return sums;
     }
 
     public static void makeAllSumsHelper(int n, int currentSum, ArrayList<Integer> sums){
       if(n == 0){
-        sums.add(currentSum);
+        sums.add(currentSum);//base case
       }else{
-        makeAllSumsHelper(n - 1, currentSum + n, sums);
-        makeAllSumsHelper(n - 1, currentSum, sums);
+        makeAllSumsHelper(n - 1, currentSum + n, sums);//adding the number to the current sum
+        makeAllSumsHelper(n - 1, currentSum, sums);//not adding the number to the current sum
       }
     }
 
@@ -79,7 +79,8 @@ public class recursion{
 
       System.out.println("");
 
-      System.out.println(makeAllSums(3));
+      System.out.println("MAKE ALL SUMS TESTING");
+      System.out.println(makeAllSums(3));//should print [0, 3, 2, 5, 1, 4, 3, 6] (order is not important)
     }
 
 }
