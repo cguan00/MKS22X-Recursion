@@ -55,8 +55,13 @@ public class recursion{
       if(n == 0){
         sums.add(currentSum);//base case
       }else{
-        makeAllSumsHelper(n - 1, currentSum + n, sums);//adding the number to the current sum
-        makeAllSumsHelper(n - 1, currentSum, sums);//not adding the number to the current sum
+        if(n > 0){//if n is positive
+          makeAllSumsHelper(n - 1, currentSum + n, sums);//adding the number to the current sum
+          makeAllSumsHelper(n - 1, currentSum, sums);//not adding the number to the current sum
+        }else{//if n is a negative number
+          makeAllSumsHelper(n + 1, currentSum + n, sums);//adding the number to the current sum
+          makeAllSumsHelper(n + 1, currentSum, sums);//not adding the number to the current sum
+        }
       }
     }
 
@@ -81,6 +86,8 @@ public class recursion{
 
       System.out.println("MAKE ALL SUMS TESTING");
       System.out.println(makeAllSums(3));//should print [0, 3, 2, 5, 1, 4, 3, 6] (order is not important)
+      System.out.println(makeAllSums(-3));//should print [0, -3, -2, -5, -1, -4, -3, -6] (order is not important)
+      System.out.println(makeAllSums(0));//should print [0]
     }
 
 }
