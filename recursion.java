@@ -45,9 +45,19 @@ public class recursion{
     }
 
     /*As Per classwork*/
-    public static ArrayList<Integer> makeAllSums(){
-      ArrayList<Integer> output = new ArrayList<Integer>();
-      return output;
+    public static ArrayList<Integer> makeAllSums(int n){
+      ArrayList<Integer> sums = new ArrayList<Integer>();
+      makeAllSumsHelper(n, 0, sums);
+      return sums;
+    }
+
+    public static void makeAllSumsHelper(int n, int currentSum, ArrayList<Integer> sums){
+      if(n == 0){
+        sums.add(currentSum);
+      }else{
+        makeAllSumsHelper(n - 1, currentSum + n, sums);
+        makeAllSumsHelper(n - 1, currentSum, sums);
+      }
     }
 
     public static void main(String[] args) {
@@ -66,6 +76,10 @@ public class recursion{
       System.out.println(fib(3));//should be 2
       System.out.println(fib(4));//should be 3
       System.out.println(fib(5));//should be 5
+
+      System.out.println("");
+
+      System.out.println(makeAllSums(3));
     }
 
 }
