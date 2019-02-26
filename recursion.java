@@ -1,5 +1,4 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class recursion{
     /*You may write additional private methods */
@@ -160,6 +159,15 @@ public static void testSqrt(int testcase){
       System.out.println(makeAllSums(3));//should print [0, 3, 2, 5, 1, 4, 3, 6] (order is not important)
       System.out.println(makeAllSums(-3));//should print [0, -3, -2, -5, -1, -4, -3, -6] (order is not important)
       System.out.println(makeAllSums(0));//should print [0]
+
+      System.out.println("");
+
+      for(int i = 0; i < 4; i++){
+        testFib(i);
+      }
+      for(int i = 0; i < 4; i++){
+        testSqrt(i);
+      }
     }
 
 }
